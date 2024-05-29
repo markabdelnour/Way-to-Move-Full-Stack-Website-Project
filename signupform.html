@@ -1,0 +1,53 @@
+<?php
+require_once 'includes/config_session.inc.php';
+require_once 'includes/signup_view.inc.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Logo way to move.png" type="image/x-icon">
+    <!-- Include fontawesome library for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="background"></div>
+    <div class="login-container">
+        <form class="login-form" action="includes/signup.inc.php" method="post">
+            <h2>Sign Up</h2>
+
+            <div class="input-group">
+                <label for="lastName">User Name:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="pwd" required>
+            </div>
+            <div class="input-group">
+                <button type="submit">Sign Up</button>
+            </div>
+            <div class="forgot-password">
+                <p>Sign up with 
+                    <a href="#" class="social-link"><i class="fab fa-google"></i></a>
+                    <span> or </span>
+                    <a href="#" class="social-link"><i class="fab fa-apple"></i></a>
+                </p>
+                <p><a href=loginform.html target="_self">already has an account</a></p>
+            </div>
+        </form>
+    </div>
+    <?php
+    check_signup_errors();
+    ?>
+</body>
+</html>

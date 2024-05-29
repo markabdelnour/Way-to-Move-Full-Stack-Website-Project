@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .invoice-container {
+            background-color: white;
+            width: 210mm;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            border-radius: 5px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+        .details div {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #333;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .print-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .print-btn:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        thead {
+            background-color: rgb(9, 1, 37);
+            color: white;
+        }
+
+        thead th {
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+
+        tbody td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        tbody td#name, 
+        tbody td#phone1, 
+        tbody td#phone2, 
+        tbody td#from, 
+        tbody td#to, 
+        tbody td#total {
+            color: #333;
+        }
+        .blurred-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('loginbackground.png') no-repeat center center;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1; /* Ensure this is behind all other content */
+        }
+
+        .invoice-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        .content-container {
+            position: relative;
+            z-index: 1; /* Ensure the content is above the background */
+        }
+        @media print {
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blurred-background"></div>
+    <div class="invoice-container">
+        <h1>Invoice</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date of Invoice</th>
+                    <th>Date of Receipt</th>
+                    <th>Name</th>
+                    <th>Phone 1</th>
+                    <th>Phone 2</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceDetails">
+            </tbody>
+        </table>
+        <button class="print-btn" onclick="window.print()">Print Invoice</button>
+        <div class="invoice-footer">
+            <br>
+            <p>Payment is required within 3 business days of invoice date. Please send remittance to waytomove@business.com.</p>
+            <p>Thank you for your order.</p>
+        </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentDate = new Date();
+            const invoiceDate = currentDate.toISOString().slice(0, 10);
+            const receiptStartDate = new Date(currentDate);
+            receiptStartDate.setDate(currentDate.getDate() + 4);
+            const receiptEndDate = new Date(currentDate);
+            receiptEndDate.setDate(currentDate.getDate() + 7);
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const carType = urlParams.get('carType');
+            const name = urlParams.get('name');
+            const phone1 = urlParams.get('phone1');
+            const phone2 = urlParams.get('phone2');
+            const govFrom = urlParams.get('govFrom');
+            const locationFrom = urlParams.get('locationFrom');
+            const zipFrom = urlParams.get('zipFrom');
+            const govTo = urlParams.get('govTo');
+            const locationTo = urlParams.get('locationTo');
+            const zipTo = urlParams.get('zipTo');
+            const distanceInKm = urlParams.get('distanceInKm');
+            const total = urlParams.get('totalAmount');
+
+            const receiptStartDateStr = receiptStartDate.toISOString().slice(0, 10);
+            const receiptEndDateStr = receiptEndDate.toISOString().slice(0, 10);
+
+            const tableBody = document.getElementById('invoiceDetails');
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${invoiceDate}</td>
+                <td>${receiptStartDateStr} - ${receiptEndDateStr}</td>
+                <td>${name}</td>
+                <td>${phone1}</td>
+                <td>${phone2}</td>
+                <td>${govFrom}, ${locationFrom}, ZIP: ${zipFrom}</td>
+                <td>${govTo}, ${locationTo}, ZIP: ${zipTo}</td>
+                <td>${total} EGP</td>
+            `;
+            tableBody.appendChild(newRow);
+        });
+    </script>
+
+</body>
+</html>

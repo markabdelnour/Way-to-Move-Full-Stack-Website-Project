@@ -1,0 +1,265 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    height: 100%;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('loginbackground.png');
+    background-size: cover;
+    filter: blur(8px); /* Apply blur effect */
+    z-index: -1; /* Place behind other elements */
+}
+
+.login-container {
+    background-color: #f4f4f4; /* Set background color */    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #0d3e67;
+    color: #0d3e67; /* Set text color */
+    width: 300px; /* Change the width to your desired value */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding for spacing inside the form */
+    height: 100%;
+    margin-top: 5%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0d3e67;
+    color: #fff;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background-color: #0d3e67;
+}
+
+.forgot-password {
+    text-align: center;
+}
+
+.forgot-password a {
+    color: #0d3e67;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.social-link:hover {
+    text-decoration: none; /* Remove default underline */
+}
+
+.social-link i {
+    position: relative;
+}
+
+.social-link i::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Adjust this value to control the distance of the line from the icon */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Height of the line */
+    background-color: #0d3e67; /* Color of the line */
+    transition: all 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Initially invisible */
+}
+
+.social-link:hover i::after {
+    opacity: 1; /* Make the line visible on hover */
+}
+
+
+
+
+
+
+
+
+.colored-text {
+    color: #0d3e67; /* Specify the color you want */
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #0d3e67;
+}
+
+.option {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.option:hover {
+    border: 2px solid #0d3e67;
+}
+
+input[type="radio"] {
+    display: none; /* Hide the actual radio buttons */
+}
+
+input[type="radio"]:checked + label {
+    border: 2px solid #0d3e67; /* Highlight the selected option */
+    color: #0d3e67;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #0d3e67;
+    
+}
+
+.address-form {
+    width: 45%;
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0px 0px 8px #0d3e67;
+}
+
+.address-form h3 {
+    margin-top: 0;
+}
+
+.address-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.address-form select,
+.address-form input,
+.address-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.address-form textarea {
+    height: 80px;
+}
+
+.buttons {
+    text-align: center;
+}
+/*    not resize*/
+#instructions-to {
+    width: 300px; 
+    height: 200px;
+    resize: none; 
+}
+#instructions-from
+{
+    width: 300px; 
+    height: 200px; 
+    resize: none; 
+}
+/*    not resize*/
+.buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0d3e67;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #0d3e67;
+}
+
+.cookie-consent {
+    position: fixed;
+    bottom: 70px; /* Adjust this value to move the bar up more */
+    left: 0;
+    width: 100%;
+    background-color: rgb(9, 1, 37);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 5px #0d3e67;
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    #accept-cookies-btn, #decline-cookies-btn {
+        background-color: #0d3e67;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin: 0 10px;
+        transition: background-color 0.3s;
+    }
+
+    #accept-cookies-btn:hover, #decline-cookies-btn:hover {
+        background-color: #0d3e67;
+    }

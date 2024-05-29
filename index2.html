@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" href="Logo way to move.png" type="image/x-icon">
+        <title>Project</title>
+        <style>
+            .cart-button {
+              display: inline-block;
+              background-color: #062742;
+              color: white;
+              border: none;
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              font-size: 24px;
+              text-align: center;
+              line-height: 40px;
+              text-decoration: none;
+              transition: background-color 0.3s ease;
+            }
+            .slideshow-container {
+                position: relative;
+                width: 100%; /* adjust as needed */
+                height: 400px; /* adjust as needed */
+                overflow: hidden;
+            }
+
+            .slides {
+                display: flex;
+                width: 100%; /* adjust as needed */
+                height: 100%;
+                position: absolute;
+                animation: slide-animation 30s linear infinite; /* Duration set to 10s per image */
+            }
+
+            .slide {
+                flex: 0 0 100%; /* Each slide takes full width */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .slide img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain; /* Ensure the image fits within the slide without being cut off or stretched */
+            }
+
+            @keyframes slide-animation {
+                0% { transform: translateX(-300%); }
+                33.33% { transform: translateX(-200%); }
+                66.66% { transform: translateX(-100%); }
+                100% { transform: translateX(0);}
+            }
+            </style>
+    </head>
+    <body>
+
+
+    <div id="cookie-consent" class="cookie-consent">
+            <p>This website uses cookies to ensure you get the best experience on our website.</p>
+            <div class="button-container">
+                <button id="accept-cookies-btn">Accept</button>
+                <button id="decline-cookies-btn">Decline</button>
+            </div>
+    </div>
+    
+    <script src="img/script.js"></script>
+
+
+    <header class="header">
+
+        <a href="order.html" target="_blank" class="logo"><span>Move</span></a>
+        <nav class="navbar">
+            
+            <a href="#about">About</a>
+            <a href="usage.html" target="_blank">Usage</a>
+            <a href="#contact-form">Contact Us</a> 
+            <a href="cart.html" target="_blank" class="cart-button">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+               
+        </nav>
+
+        <label id="username-label"></label>
+
+        <div class="dropdown">
+            <button class="dropdown-button" tabindex="1">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html" target="_self">logout</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.querySelector('.dropdown-button').addEventListener('click', function() {
+            var dropdownContent = this.nextElementSibling;
+            dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+        });
+    </script>
+
+<section class="home">
+    <div class="background">
+        <img src="img/imgtomap.png" usemap="#image-map" class="imgtomap">
+        <map name="image-map">
+            <area target="_blank" alt="order" title="order" href="order.html" coords="257,550,85,229" shape="rect">
+            <area target="_blank" alt="order" title="order" href="order.html" coords="412,254,629,607" shape="rect">
+            <area target="" alt="contact" title="contact" href="#contact-form" coords="263,158,67" shape="circle">
+            <area target="" alt="contact" title="contact" href="contact-form" coords="563,148,101" shape="circle">
+        </map>
+        <div class="home-content">
+            <h3>Welcome to </h3>
+            <h1>The Way to <br><div class="m">MOVE!</div></h1>
+            <p>We're here to guide you on your path to movement mastery</p>
+            <div class="btn-box">
+                <a href="order.html" target="_blank" class="btn1">Start to MOVE!</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="image_main2">
+    <img src="main1.png">
+</section>
+
+<section>
+    <div class="slideshow-container">
+        <div class="slides" id="slides">
+          <!-- Slides will be inserted here by JavaScript -->
+        </div>
+      </div>
+</section>
+
+
+<section class="about" id="about">
+    <div class="about-img">
+        <img src="img/main 2.png" alt="image">
+    </div>
+    <div class="about-content">
+        <h3>About us</h3>
+        <h5>We are a startup moving and transportation company. </h5>
+        <h5>We specialize in helping individuals and businesses relocate efficiently and safely.</h5>
+        <div class="design">
+            <ul>
+                <li><strong>Experienced Professionals:</strong> Our team dedicated to providing top-notch services.</li>
+                <li><strong>Range of Services:</strong> We offer a wide range of services including:
+                    <ol>
+                        <li>Residential Moving</li>
+                        <li>Commercial Moving</li>
+                        <li>Regional Goods Transportation</li>
+                    </ol>
+                </li>
+                <li><strong>Reliable and Efficient:</strong> We prioritize reliability and efficiency in every job we undertake.</li>
+                <li><strong>Customer Satisfaction:</strong> Customer satisfaction is our utmost priority.</li>
+                <li><strong>Get in Touch:</strong> Contact us today to learn more about our services or to request a quote for your next move.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <section class="image_main2">
+        <img src="img/fasel.png">
+    </section>
+
+    <section class="image_main2">
+        <img src="img/main 3.png">
+    </section>
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+
+</section>
+
+<section class="main4"id="main4">
+  <div class="opinion">
+    <pre><h2>                                                                       What are our Client says
+    </h2>
+    
+    </pre>
+  
+  </div>  
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>FeedBack</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Us*****12@example.com</td>
+            <td>Usama Ali</td>
+            <td>Good App</td>
+            <td>2 star</td>
+        </tr>
+        <tr>
+            <td>ma******de@example.com</td>
+            <td>Mohaned Salem</td>
+            <td>High Quality </td>
+            <td>4 star</td>
+        </tr>
+        <tr>
+            <td>om*******as@example.com</td>
+            <td>Omar Tafwik</td>
+            <td>The Best</td>
+            <td>4 star</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<div class="star-rating">
+    <input type="radio" id="star5" name="rating" value="5">
+    <label for="star5"></label>
+    <input type="radio" id="star4" name="rating" value="4">
+    <label for="star4"></label>
+    <input type="radio" id="star3" name="rating" value="3">
+    <label for="star3"></label>
+    <input type="radio" id="star2" name="rating" value="2">
+    <label for="star2"></label>
+    <input type="radio" id="star1" name="rating" value="1">
+    <label for="star1"></label>
+  </div>
+
+</section>
+
+
+    
+<section class="contact-form" id="contact-form">
+    <div class="message">
+    
+        <h2> < Contact Us > </h2>
+    </div>
+    <div class="Collect">
+  
+    <div class="container">
+       
+        <table class="table1">
+            <tbody>
+                <tr>
+                    <th></th>
+                    <td></td>
+                </tr> <tr>
+                    <th></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>    Phone</th>
+                    <td>+2012824744</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>Ship123@gmail.com</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Social Media</th>
+                    <td><a href="https://www.facebook.com/groups/958025499045941" target="_blank" class="blue-link">facebook page</a></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td></td>
+                </tr> <tr>
+                    <th></th>
+                    <td></td>
+                </tr>
+                
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+    <div class="Form-Class">
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send</button>
+       
+    </form>
+</div>
+</div>
+    </section>
+
+
+
+    <footer>
+        <p>&copy; 2024 Contact Me. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Array of image paths
+        var images = ["slide1.jpg", "slide2.jpg", "slide3.jpg"];
+    
+        // Create slides dynamically
+        var slidesContainer = document.getElementById("slides");
+        images.forEach(function(imageSrc) {
+          var slide = document.createElement("div");
+          slide.classList.add("slide");
+          var img = document.createElement("img");
+          img.src = imageSrc;
+          img.alt = "Slide";
+          slide.appendChild(img);
+          slidesContainer.appendChild(slide);
+        });
+    
+        // Duplicate slides to ensure seamless looping
+        images.forEach(function(imageSrc) {
+          var slide = document.createElement("div");
+          slide.classList.add("slide");
+          var img = document.createElement("img");
+          img.src = imageSrc;
+          img.alt = "Slide";
+          slide.appendChild(img);
+          slidesContainer.appendChild(slide);
+        });
+      </script>
+
+    <script>
+        // Get the username from the URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var username = urlParams.get('username');
+
+        // Display the username in the label
+        var usernameLabel = document.getElementById('username-label');
+        usernameLabel.textContent = "Hello, " + username;
+    </script>
+
+<script>
+    // Array of image paths
+    var images = ["slide1.jpg", "slide2.jpg", "slide3.jpg"];
+
+    // Create slides dynamically
+    var slidesContainer = document.getElementById("slides");
+    images.forEach(function(imageSrc) {
+      var slide = document.createElement("div");
+      slide.classList.add("slide");
+      var img = document.createElement("img");
+      img.src = imageSrc;
+      img.alt = "Slide";
+      slide.appendChild(img);
+      slidesContainer.appendChild(slide);
+    });
+
+    // Duplicate slides to ensure seamless looping
+    images.forEach(function(imageSrc) {
+      var slide = document.createElement("div");
+      slide.classList.add("slide");
+      var img = document.createElement("img");
+      img.src = imageSrc;
+      img.alt = "Slide";
+      slide.appendChild(img);
+      slidesContainer.appendChild(slide);
+    });
+  </script>
+
+
+    </body>
+</html>
